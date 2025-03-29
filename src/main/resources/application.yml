@@ -38,6 +38,6 @@ spring:
     init:
       mode: never
 
-jwt:
-  issuer: dsada
-  secret_key: study-springboot
+  jwt:
+    issuer: dsada
+    secret: study-springboot
