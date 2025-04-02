@@ -8,6 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import surveypulse.user_service.dto.controller.JoinControllerDTO;
 import surveypulse.user_service.dto.controller.UpdateUserControllerDTO;
+import surveypulse.user_service.dto.response.RespondentUserDto;
 import surveypulse.user_service.dto.response.UserResponseDTO;
 import surveypulse.user_service.service.UserService;
 
@@ -29,6 +30,12 @@ public class UserController {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         UserResponseDTO userResponseDTO = userService.getUserByUsername(username);
         return ResponseEntity.ok(userResponseDTO);
+    }
+
+    @GetMapping("/{userId}")
+    public ResponseEntity<RespondentUserDto> getUser(@PathVariable Long userId) {
+        RespondentUserDto respondentUserDto = userService.getUser(userId);
+        return ResponseEntity.ok(respondentUserDto);
     }
 
     @PostMapping("/update")

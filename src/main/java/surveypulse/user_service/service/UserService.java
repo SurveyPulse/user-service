@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import surveypulse.user_service.dto.response.RespondentUserDto;
 import surveypulse.user_service.dto.response.UserResponseDTO;
 import surveypulse.user_service.dto.service.JoinServiceDTO;
 import surveypulse.user_service.dto.service.UpdateUserServiceDTO;
@@ -80,6 +81,13 @@ public class UserService {
                 .orElseThrow(() -> new NotFoundException(UserExceptionType.NOT_FOUND_USER));
 
         userRepository.delete(user);
+    }
+
+    public RespondentUserDto getUser(Long userId) {
+        User user = userRepository.findById(userId)
+                                  .orElseThrow(() -> new NotFoundException(UserExceptionType.NOT_FOUND_USER));
+
+        return new RespondentUserDto(userId, user.getUsername());
     }
 
     public User getUserBySecurityUsername(String username) {
