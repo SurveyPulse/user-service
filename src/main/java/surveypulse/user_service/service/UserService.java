@@ -87,7 +87,7 @@ public class UserService {
         User user = userRepository.findById(userId)
                                   .orElseThrow(() -> new NotFoundException(UserExceptionType.NOT_FOUND_USER));
 
-        return new RespondentUserDto(userId, user.getUsername());
+        return new RespondentUserDto(userId, user.getUsername(), user.getRole());
     }
 
     public User getUserBySecurityUsername(String username) {
