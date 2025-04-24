@@ -18,8 +18,8 @@ spring:
     name: user-service
   datasource:
     url: jdbc:mysql://surveypulse-rds.c9s06ug8a482.ap-northeast-2.rds.amazonaws.com:3306/user_service
-    username: admin
-    password: asdf2003
+    username:
+    password:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
