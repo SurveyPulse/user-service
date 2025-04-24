@@ -34,10 +34,3 @@ spring:
     url:
     username:
     password:
-
-aws:
-  s3:
-    bucket-name:
-  credentials:
-    access-key:
-    secret-key:
