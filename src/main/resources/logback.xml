@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <!-- 환경 변수로부터 설정 -->
-    <property name="SERVICE_NAME" value="${SERVICE_NAME:-user-service}"/>
-    <property name="ENV" value="${ENV:-dev}"/>
+    <property name="SERVICE_NAME" value="user-service"/>
+    <property name="ENV" value="dev"/>
     <property name="LOG_DIR" value="logs/${SERVICE_NAME}-${ENV}"/>
     <property name="LOG_FILE" value="${LOG_DIR}/application.log"/>
 

@@ -15,21 +15,6 @@ spring:
     user:
       name: user-service
       port: 8081
-    survey:
-      name: survey-service
-      port: 8083
-    response:
-      name: response-service
-      port: 8084
-    report:
-      name: report-service
-      port: 8085
-    advertise:
-      name: advertise-service
-      port: 8086
-    front:
-      name: front-service
-      port: 80
   datasource:
     url:
     username:
