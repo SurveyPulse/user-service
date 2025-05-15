@@ -23,3 +23,14 @@ spec:
                 name: {{ .Values.spring.service.user.name }}
                 port:
                   number: {{ .Values.spring.service.port }}
+
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: /login
+            pathType: {{ .Values.ingress.pathType }}
+            backend:
+              service:
+                name: {{ .Values.spring.service.user.name }}
+                port:
+                  number: {{ .Values.spring.service.port }}

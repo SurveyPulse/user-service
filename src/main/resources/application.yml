@@ -17,7 +17,7 @@ spring:
   application:
     name: user-service
   datasource:
-    url: jdbc:mysql://surveypulse-rds.c9s06ug8a482.ap-northeast-2.rds.amazonaws.com:3306/user_service
+    url:
     username:
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -41,3 +41,20 @@ spring:
   jwt:
     issuer: dsada
     secret: your-very-strong-secret-key-which-is-at-least-32-characters-long
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+logging:
+  level:
+    root: INFO
