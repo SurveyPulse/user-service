@@ -15,6 +15,8 @@ import surveypulse.user_service.global.exception.type.BadRequestException;
 import surveypulse.user_service.global.exception.type.NotFoundException;
 import surveypulse.user_service.repository.UserRepository;
 
+import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
@@ -90,11 +92,10 @@ public class UserService {
         return new RespondentUserDto(userId, user.getUsername(), user.getRole());
     }
 
-    public User getUserBySecurityUsername(String username) {
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new NotFoundException(UserExceptionType.NOT_FOUND_USER));
-
-        return user;
+    public List<RespondentUserDto> getRespondentUsersByIds(List<Long> userIds) {
+        List<User> users = userRepository.findAllById(userIds);
+        return users.stream()
+                    .map(RespondentUserDto::fromEntity)
+                    .toList();
     }
-
 }

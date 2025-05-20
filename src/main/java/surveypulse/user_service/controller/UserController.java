@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import surveypulse.user_service.dto.controller.JoinControllerDTO;
 import surveypulse.user_service.dto.controller.UpdateUserControllerDTO;
 import surveypulse.user_service.dto.response.RespondentUserDto;
-import surveypulse.user_service.dto.response.UserResponseDTO;
 import surveypulse.user_service.service.UserService;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -26,10 +27,9 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<UserResponseDTO> getMyUserInfo() {
-        String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        UserResponseDTO userResponseDTO = userService.getUserByUsername(username);
-        return ResponseEntity.ok(userResponseDTO);
+    public List<RespondentUserDto> getRespondentUsersByIds(@RequestParam List<Long> userIds) {
+        List<RespondentUserDto> respondentUserDtos = userService.getRespondentUsersByIds(userIds);
+        return respondentUserDtos;
     }
 
     @GetMapping("/{userId}")
