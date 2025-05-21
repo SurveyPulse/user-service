@@ -24,7 +24,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update  # 첫 배포 시 'create', 그 후에는 'update' 권장
+      ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
