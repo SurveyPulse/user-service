@@ -8,14 +8,46 @@ service:
 spring:
   labels: user
   image:
-    repository: 440744253928.dkr.ecr.ap-northeast-2.amazonaws.com/surveypulse/user  # ECR에 저장된 스프링 이미지 URL
+    repository: 440744253928.dkr.ecr.ap-northeast-2.amazonaws.com/surveypulse/user
     tag: latest
   service:
     port: 80
-    user:
-      name: user-service
-      port: 8081
   datasource:
     url:
     username:
     password:
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 60
+  targetMemoryUtilizationPercentage : 75
+
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 60
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 75
+
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 120
+      policies:
+        - type: Percent
+          value: 100
+          periodSeconds: 60
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+        - type: Percent
+          value: 10
+          periodSeconds: 60
