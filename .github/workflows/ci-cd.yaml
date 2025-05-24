@@ -127,10 +127,10 @@ jobs:
         run: |
           helm upgrade --install user-app ./helm/user --create-namespace --namespace user \
           --set image.tag=${{ github.sha }} \
-          --set image.repository=${{ secrets.REGISTRY }}/${{ vars.REPOSITORY }} \
-          --set spring.datasource.url=${{ secrets.SPRING_DATASOURCE_URL }} \
-          --set spring.datasource.username=${{ secrets.SPRING_DATASOURCE_USERNAME }} \
-          --set spring.datasource.password=${{ secrets.SPRING_DATASOURCE_PASSWORD }} \
+          --set image.repository=${{ secrets.REGISTRY }}/${{ vars.USER_REPOSITORY }} \
+          --set spring.datasource.url=${{ secrets.SPRING_USER_DATASOURCE_URL }} \
+          --set spring.datasource.username=${{ secrets.SPRING_USER_DATASOURCE_URL }} \
+          --set spring.datasource.password=${{ secrets.SPRING_USER_DATASOURCE_URL }} \
       - name: notify
         if: always()
         uses: slackapi/slack-github-action@v1.24.0
