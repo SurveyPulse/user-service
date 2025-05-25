@@ -27,4 +27,4 @@ SurveyPulse 플랫폼의 사용자 관리를 담당하는 마이크로서비스�
 - **CI/CD**: GitHub Actions
 - **컨테이너 & 오케스트레이션**: Docker, Kubernetes, Helm, AWS EKS
 - **아키텍처**: 마이크로서비스 아키텍처(MSA)
-
+- **로드밸런싱**: AWS Load Balancer Controller (ALB Ingress)
