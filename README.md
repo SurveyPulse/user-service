@@ -27,3 +27,12 @@ SurveyPulse 플랫폼의 사용자 관리를 담당하는 마이크로서비스�
 - **컨테이너 & 오케스트레이션**: Docker, Kubernetes, Helm, AWS EKS
 - **아키텍처**: 마이크로서비스 아키텍처(MSA)
 - **로드밸런싱**: AWS Load Balancer Controller (ALB Ingress)
+
+
+## 아키텍처
+
+![서비스 아키텍처 다이어그램](https://raw.githubusercontent.com/SurveyPulse/user-service/main/docs/images/aws-architecture.png)
+
+![RDS 아키텍처 다이어그램](https://raw.githubusercontent.com/SurveyPulse/user-service/main/docs/images/aws-rds-architecture.png)
+
+![CI/CD 파이프라인 다이어그램](https://raw.githubusercontent.com/SurveyPulse/user-service/main/docs/images/cicd-architecture.png)
