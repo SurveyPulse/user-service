@@ -31,10 +31,6 @@ SurveyPulse 플랫폼의 사용자 관리를 담당하는 마이크로서비스�
 
 ## 아키텍처
 
-![서비스 아키텍처 다이어그램](https://raw.githubusercontent.com/SurveyPulse/user-service/main/docs/images/AWS%20Architacture.png)
-![RDS 아키텍처 다이어그램](https://raw.githubusercontent.com/SurveyPulse/user-service/main/docs/images/AWS%20RDS%20Architacture.png)
-![CI/CD 파이프라인 다이어그램](https://raw.githubusercontent.com/SurveyPulse/user-service/main/docs/images/cicd%20Architacture.png)
-
-
-
-
+![서비스 아키텍처 다이어그램](https://raw.githubusercontent.com/SurveyPulse/user-service/main/user-service/docs/images/AWS%20Architacture.png)
+![RDS 아키텍처 다이어그램](https://raw.githubusercontent.com/SurveyPulse/user-service/main/user-service/docs/images/AWS%20RDS%20Architacture.png)
+![CI/CD 파이프라인 다이어그램](https://raw.githubusercontent.com/SurveyPulse/user-service/main/user-service/docs/images/cicd%20Architacture.png)
