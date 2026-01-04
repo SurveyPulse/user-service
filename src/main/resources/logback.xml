@@ -21,8 +21,7 @@
     <!-- 콘솔 출력 -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSS'Z', UTC} %-5level [${SERVICE_NAME}] [%thread] %logger{36} - %msg%n</pattern>
-        </encoder>
+            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSS'Z', UTC} %-5level [${SERVICE_NAME},%X{traceId:-},%X{spanId:-}] [%thread] %logger{36} - %msg%n</pattern>        </encoder>
     </appender>
 
     <!-- 파일 출력 -->
@@ -33,8 +32,7 @@
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
-            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSS'Z', UTC} %-5level [${SERVICE_NAME}] [%thread] %logger{36} - %msg%n</pattern>
-        </encoder>
+            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSS'Z', UTC} %-5level [${SERVICE_NAME},%X{traceId:-},%X{spanId:-}] [%thread] %logger{36} - %msg%n</pattern>        </encoder>
     </appender>
 
     <!-- Root Logger -->
