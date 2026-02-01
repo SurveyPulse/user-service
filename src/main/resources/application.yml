@@ -1,5 +1,6 @@
 server:
   port: 8081
+  shutdown: graceful
   servlet:
     encoding:
       charset: UTF-8
@@ -8,8 +9,9 @@ server:
 
 eureka:
   client:
-    register-with-eureka: true
-    fetch-registry: true
+    enabled: false
+    register-with-eureka: false
+    fetch-registry: false
     service-url:
       defaultZone: http://localhost:8761/eureka
 
@@ -17,10 +19,12 @@ spring:
   application:
     name: user-service
   datasource:
-    url:
-    username:
-    password:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
 
   jpa:
     hibernate:
