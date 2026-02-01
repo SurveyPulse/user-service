@@ -12,10 +12,12 @@ spring:
     tag: latest
   service:
     port: 80
+    user:
+      port: 8081
   datasource:
-    url:
-    username:
-    password:
+    url: ""
+    username: ""
+    password: ""
 
 autoscaling:
   enabled: true
@@ -40,7 +42,7 @@ autoscaling:
 
   behavior:
     scaleUp:
-      stabilizationWindowSeconds: 120
+      stabilizationWindowSeconds: 0
       policies:
         - type: Percent
           value: 100
